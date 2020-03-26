@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model Blogs_K300.ViewModels.AllVm
+@using Blogs_K300.ResourceLang
+
+<div class="row py-5">
+    <div class="col-md-3">
+        <ul>
+            @foreach (var cat in Model.CategoryList)
+            {
+                <li><a href="/Home/index/@cat.Id">@cat.CategoryName</a> </li>
+
+            }
+
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <div class="row">
+            @foreach (var pro in Model.Product)
+            {
+                <div class="col-md-4">
+                    <div class="product-item">
+                        <div class="card">
+                            <img class="card-img-top" src="@pro.Photo" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">@pro.ProductName</h5>
+                                <p class="card-text">@pro.Description</p>
+                                <a href="#" class="btn btn-primary">@RGlobal.RReadMore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+        </div>
+    </div>
+
